@@ -20,14 +20,30 @@ input {
 	font-size: 16px;
 	padding: 0.5em 1em;
 }
+ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+li{
+	border-right: 1px solid #000000;
+	display:inline;
+}
 </style>
 </head>
 <body>
-	<h1>Game Name</h1>
+	<h1>Incremental Game Framework</h1>
+	<ul>
+		<li><a href="admin-info.html">Game Information</a></li>
+		<li><a href="admin-events.html">Events</a></li>
+		<li><a href="admin-generators.html">Generators</a></li>
+	</ul>
+	
+	<h3>Game Information</h3>
 	<form action="/action_page.php">
 		Game Name<br>
 		<input type="text" name="gamename" value="Cookie Clicker">
-		<br>
+		<br><br>
 		<input type="submit" value="Save">
 	</form>
 </body>
