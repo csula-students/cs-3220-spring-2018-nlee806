@@ -20,41 +20,43 @@ input {
 	font-size: 16px;
 	padding: 0.5em 1em;
 }
+ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+li{
+	border-right: 1px solid #000000;
+	display:inline;
+}
 </style>
 </head>
 <body>
-	<h1>Hello world!</h1>
-	<button>A button</button>
-	<table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Rate</th>
-			<th>Cost</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Grandma</td>
-			<td>5</td>
-			<td>10</td>
-		</tr>
-		<tr>
-			<td>Factory</td>
-			<td>10</td>
-			<td>50</td>
-		</tr>
-		<tr>
-			<td>Mine</td>
-			<td>20</td>
-			<td>200</td>
-		</tr>
-	</tbody>
-</table>
-<form action="">
-	<label for="name">Name</label>
-	<input type="text" id="name">
-	<!-- add more necessary information you need for creating additional recipes -->
-</form>
+	<h1>Incremental Game Framework</h1>
+	<ul>
+		<li><a href="admin-info.html">Game Information</a></li>
+		<li><a href="admin-events.html">Events</a></li>
+		<li><a href="admin-generators.html">Generators</a></li>
+	</ul>
+	
+	<h3>Generators</h3>
+	<form action="/action_page.php">
+		Generator Name:<br>
+		<input type="text" name="generatorname" value="Grandma">
+		<br>
+		Generator Rate<br>
+		<input type="text" name="generatorrate" value="0.05">
+		<br>
+		Base Cost<br>
+		<input type="text" name="basecost" value="10">
+		<br>
+		Unlock at<br>
+		<input type="text" name="unlockat" value="10">
+		<br>
+		Description<br>
+		<input type="text" name="description" value="Text">
+		<br>
+		<input type="submit" value="{Add|Edit}">
+	</form>
 </body>
 </html>
