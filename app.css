@@ -1,0 +1,49 @@
+body{
+		background-color: white;
+}
+	header{
+		background: black, color: white;
+	}
+	footer{
+		background: #aaa, color: white;
+	}
+	.nav{
+		background:#eee;
+	}
+	.nav ul{
+		list-style-type: none;
+		padding: 0;
+	}
+	.box1 {
+		background-color: white;
+		border: 5px solid black;
+		padding: 30px;
+		position: absolute;
+		left: 0px;
+		width: 300px;
+	}
+	.box2 {
+		background-color: white;
+		border: 5px solid black;
+		padding: 30px;
+		margin: auto;
+		width: 300px;
+	}
+	.box3 {
+		background-color: white;
+		border: 5px solid black;
+		padding: 30px;
+		position: absolute;
+		right: 0px;
+		width: 300px;
+	}
+	.storybook{
+		overflow:hidden;
+		overflow-y:scroll;
+		color: WHITE;
+		background-color: BLACK;
+	}
+	.action{
+		position: absolute;
+		right:0px;
+	}
