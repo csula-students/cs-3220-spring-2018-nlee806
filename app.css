@@ -14,26 +14,30 @@ body{
 		list-style-type: none;
 		padding: 0;
 	}
+	.boxes{
+		position: relative;
+		width:100%;
+	}
 	.box1 {
 		background-color: white;
 		border: 5px solid black;
 		padding: 30px;
 		position: absolute;
-		left: 0px;
+		float:left;
 		width: 300px;
 	}
 	.box2 {
 		background-color: white;
 		border: 5px solid black;
-		padding: 30px;
 		margin: auto;
+		padding: 30px;
 		width: 300px;
 	}
 	.box3 {
 		background-color: white;
 		border: 5px solid black;
 		padding: 30px;
-		position: absolute;
+		position:absolute;
 		right: 0px;
 		width: 300px;
 	}
@@ -47,3 +51,43 @@ body{
 		position: absolute;
 		right:0px;
 	}
+	.quantity1{
+		position: absolute;
+		top: 8px;
+		right: 16px;
+		font-size: 18px;
+	}
+	.quantity2{
+		position: absolute;
+		top: 8px;
+		right: 16px;
+		font-size: 18px;
+	}
+	.quantity3{
+		position: absolute;
+		top: 8px;
+		right: 16px;
+		font-size: 18px;
+	}
+	.rate{
+		
+	}
+	.button1{
+		position: absolute;
+		bottom: 8px;
+		right: 16px;
+		font-size: 18px;
+	}
+	.button2{
+		position: absolute;
+		bottom: 8px;
+		right: 16px;
+		font-size: 18px;
+	}
+	.button3{
+		position: absolute;
+		bottom: 8px;
+		right: 16px;
+		font-size: 18px;
+	}
+	
