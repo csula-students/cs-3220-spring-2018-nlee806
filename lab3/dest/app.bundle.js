@@ -171,6 +171,7 @@ function main() {
 	const initialState = {
 		example: 'Hello custom element',
 		counter: 0,
+<<<<<<< HEAD
 		generators: [/*
 {
 name: 'Grandma',
@@ -182,6 +183,9 @@ name: 'Factory',
 rate:5,
 }*/
 ],
+=======
+		generators: [],
+>>>>>>> 24ff7f4f4a3d5cf2de057505eeb050793c262c30
 		story: []
 	};
 
@@ -749,12 +753,15 @@ function reducer(state, action) {
 		case 'EXAMPLE_MUTATION':
 			state.example = action.payload;
 			return state;
+<<<<<<< HEAD
 			break;
 		case 'BUY_GENERATOR':
 			state.counter = action.payload;
 			state.generator = action.payload;
 			return state;
 			break;
+=======
+>>>>>>> 24ff7f4f4a3d5cf2de057505eeb050793c262c30
 		default:
 			return state;
 	}
@@ -887,6 +894,7 @@ exports.default = function (store) {
 			this.store = store;
 
 			// TODO: render generator initial view
+<<<<<<< HEAD
 			this.root.innerHTML = `<ul>
 				${this.store.subscribe()}
 				</ul>`;
@@ -907,6 +915,12 @@ exports.default = function (store) {
 			document.getElementById("counter").addEventListener("click", generate);
 			document.getElementById("clickIncrease3").addEventListener("click", getCost);
 			document.getElementById("counter").addEventListener("click", generate);
+=======
+
+			// TODO: subscribe to store on change event
+
+			// TODO: add click event
+>>>>>>> 24ff7f4f4a3d5cf2de057505eeb050793c262c30
 		}
 	};
 };
