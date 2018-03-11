@@ -3,8 +3,8 @@ export default function (store) {
 		constructor () {
 			super();
 			this.store = store;
-
-			// TODO: add click event
+			
+			// TODO: add click event    DOM rendering, event binding to buy
 		}
 	};
 }

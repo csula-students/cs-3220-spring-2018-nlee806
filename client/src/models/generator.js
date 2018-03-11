@@ -28,7 +28,10 @@ export default class Generator {
 	 */
 	getCost () {
 		// TODO: implement the function according to doc above
-		return 0;
+		var firstSide = (baseCost*(1+(constants.growthRatio)^(quantity)));
+		var x = firstSide / (quantity);
+		return x;
+//		return 0;
 	}
 
 	/**
@@ -38,6 +41,7 @@ export default class Generator {
 	 */
 	generate () {
 		// TODO: implement based on doc above
-		return 0;
+		return (rate * quantity);
+//		return 0;
 	}
 }
