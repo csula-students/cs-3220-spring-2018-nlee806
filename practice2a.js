@@ -1,0 +1,13 @@
+<p>Hi there, I want to play a guessing game with you! Please guess a number
+between 1 and 10, and I will tell you if it is my number or not!</p>
+
+<script>
+const randomNumber = Math.floor(Math.random()*10+0);
+console.log(randomNumber);
+const node = document.querySelector('#guess').addEventListener('click', function(){
+	var number = prompt('Guess a number!');
+});
+
+	
+
+</script>
