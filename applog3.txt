@@ -42,6 +42,7 @@ document.querySelector('#clickIncrease3').bind("click", function(){
 function genCursor(){
 //		window.incrementalGame.state.counter = counterHere;
 /*	const exCursor = {
+function increase10(){
 	type: 'autonomous',
 	name: 'Cursor',
 	description: 'desc',
@@ -67,7 +68,7 @@ function genCursor(){
 //	counterHere++;
 	window.incrementalGame.state.counter = counterHere;
 	
-	decrease(costCursor);
+	decrease(10);
 	costCursor = Generator.getCost();
 	document.getElementById("clickIncrease1").innerHTML = costCursor+" Cookies";
 	//quantityFinal = quantityFinal+10;
@@ -105,7 +106,7 @@ function genGrandma(){
 */
 	window.incrementalGame.state.counter = counterHere;
 //		counterHere++;
-		decrease(costGrandma);
+		decrease(100);
 		costGrandma = Generator.getCost();
 		document.getElementById("clickIncrease2").innerHTML = costGrandma+" Cookies";
 		//quantityFinal = quantityFinal+100;
@@ -144,7 +145,7 @@ function genCookieFactory(){
 	window.incrementalGame.state.counter = counterHere;
 		//var counter3 = window.state.counter;
 //		counterHere++;
-		decrease(costCookieFactory);
+		decrease(500);
 		costCookieFactory = Generator.getCost();
 		document.getElementById("clickIncrease3").innerHTML = costCookieFactory+" Cookies";
 		//quantityFinal = quantityFinal+500;
@@ -152,9 +153,6 @@ function genCookieFactory(){
 		//alert('Increased by 500');
 //		pubSub.publish(counterHere);//window.incrementalGame.state.counter);
 //		pubSub.subscribe();
-		return quantity3;
-}
-
 function increase(increment){
 	quantityFinal = quantityFinal+increment;
 	counterHere = counterHere+increment;

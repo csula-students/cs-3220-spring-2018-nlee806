@@ -1,0 +1,58 @@
+=======
+<<<<<<< lab3updated
+function increase10(){
+=======
+>>>>>>> master
+	quantity1=quantity1+10;
+	document.getElementById("quantity1").innerHTML = quantity1;
+	increase(10);
+	//quantityFinal = quantityFinal+10;
+	//document.getElementById("counter").innerHTML = quantityFinal+10;
+	//alert('Increased by 10');
+	pubSub.publish(window.state.counter);
+	pubSub.subscribe();
+	pubSub.publish();
+	return quantity1;
+}
+function increase100(){
+	quantity2=quantity2+100;
+		document.getElementById("quantity2").innerHTML = quantity2;
+		increase(100);
+		//quantityFinal = quantityFinal+100;
+		//document.getElementById("counter").innerHTML = quantityFinal+100;
+		//alert('Increased by 100');
+		pubSub.publish(window.state.counter);
+		pubSub.subscribe();
+		pubSub.publish();
+		return quantity2;
+}
+function increase500(){
+	quantity3=quantity3+500;
+		document.getElementById("quantity3").innerHTML = quantity3;
+		increase(500);
+		//quantityFinal = quantityFinal+500;
+		//document.getElementById("counter").innerHTML = quantityFinal+500;
+		//alert('Increased by 500');
+		pubSub.publish(window.state.counter);
+		pubSub.subscribe();
+		pubSub.publish();
+<<<<<<< lab3updated
+>>>>>>> 24ff7f4f4a3d5cf2de057505eeb050793c262c30
+=======
+>>>>>>> ad7ca3bf2051efcb7f412841aa45756fa87051a0
+>>>>>>> master
+		return quantity3;
+}
+
+
+document.getElementById("counter").innerHTML = quantityFinal;
+	pubSub.publish(window.state.counter);
+	pubSub.subscribe()
+	pubSub.publish()
+>>>>>>> 24ff7f4f4a3d5cf2de057505eeb050793c262c30
+=======
+	pubSub.publish(window.state.counter);
+	pubSub.subscribe()
+	pubSub.publish()
+>>>>>>> ad7ca3bf2051efcb7f412841aa45756fa87051a0
+>>>>>>> master
