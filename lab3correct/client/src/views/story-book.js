@@ -9,6 +9,8 @@ export default function (store) {
 
 		handleStateChange (newState) {
 			// TODO: display story based on the state "resource" and "stories"
+				window.store.state
+/*			
 			console.log('WebComponent#stateChange', this, this.store.state);
             // remove any existing counters (if any)
             //counter.forEach(c => {
@@ -18,15 +20,15 @@ export default function (store) {
                 // render up to date counter
                 this.classList.add(newState.counter);
             }
-			generators.forEach(c => {
-                this.classList.remove(c);
-            });
+			//generators.forEach(c => {
+            //    this.classList.remove(c);
+            //});
             if (newState.generators) {
                 // render up to date generator
                 this.classList.add(newState.generators);
 			}
 		}
-
+*/
 		connectedCallback () {
 			this.store.subscribe(this.onStateChange);
 		}

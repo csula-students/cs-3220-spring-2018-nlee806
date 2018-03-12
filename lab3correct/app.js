@@ -4,7 +4,7 @@
 var quantity1 = 0;
 var quantity2 = 0;
 var quantity3 = 0;
-var quantityFinal = 0;
+//var quantityFinal = 0;
 var counterHere = window.incrementalGame.state.counter;
 var costCursor = 10;
 var costGrandma = 100;
@@ -40,118 +40,34 @@ document.querySelector('#clickIncrease3').bind("click", function(){
 }
 */
 function genCursor(){
-//		window.incrementalGame.state.counter = counterHere;
-/*	const exCursor = {
-	type: 'autonomous',
-	name: 'Cursor',
-	description: 'desc',
-	rate: 5,
-	baseCost: 5,
-	quantity: 0,
-	unlockValue: 5
-	}; 
-*/
 	quantity1=quantity1+1;
 	document.getElementById("quantity1").innerHTML = quantity1;
-		window.store.state = quantity1;
-/*	var price1 = reducer(store.state,constants.'BUY_GENERATOR');
-	const action = {
-		type: constants.BUY_GENERATOR,
-		payload: {
-			name: 'Cursor',
-			quantity: 1
-		}
-	};
-	document.getElementById("clickIncrease1").innerHTML = price1+" Cookies";
-*/
-//	counterHere++;
+//	window.store.state = quantity1;
 	window.incrementalGame.state.counter = counterHere;
-	
 	decrease(costCursor);
-	costCursor = Generator.getCost();
+	Generator gen1 = new Generator();
+	costCursor = gen1.getCost();
 	document.getElementById("clickIncrease1").innerHTML = costCursor+" Cookies";
-	//quantityFinal = quantityFinal+10;
-	//document.getElementById("counter").innerHTML = quantityFinal+10;
-	//alert('Increased by 10');
-//	pubSub.publish(window.incrementalGame.state.counter);//window.incrementalGame.state.counter);
-//	pubSub.subscribe();
 	return quantity1;
 }
 function genGrandma(){
-//		window.incrementalGame.state.counter = counterHere;
-
-/*	const exGrandma = {
-	type: 'autonomous',
-	name: 'Grandma',
-	description: 'desc',
-	rate: 10,
-	baseCost: 10,
-	quantity: 0,
-	unlockValue: 10
-	};
-*/
 	quantity2=quantity2+1; 											// quantity of generators
 	document.getElementById("quantity2").innerHTML = quantity2;
-		window.store.state = quantity2;
-/*			var price2 = reducer(store.state,constants.'BUY_GENERATOR');
-	const action = {
-		type: constants.BUY_GENERATOR,
-		payload: {
-			quantity: 1
-		}
-	};
-	
-	document.getElementById("clickIncrease1").innerHTML = price2+" Cookies";
-*/
+//		window.store.state = quantity2;
 	window.incrementalGame.state.counter = counterHere;
-//		counterHere++;
 		decrease(costGrandma);
 		costGrandma = Generator.getCost();
 		document.getElementById("clickIncrease2").innerHTML = costGrandma+" Cookies";
-		//quantityFinal = quantityFinal+100;
-		//document.getElementById("counter").innerHTML = quantityFinal+100;
-		//alert('Increased by 100');
-//		pubSub.publish(counterHere);//window.incrementalGame.state.counter);
-//		pubSub.subscribe();
 		return quantity2;
 }
 function genCookieFactory(){
-//		window.incrementalGame.state.counter = counterHere;
-/*	const exCookieFactory = {
-	type: 'autonomous',
-	name: 'CookieFactory',
-	description: 'desc',
-	rate: 20,
-	baseCost: 20,
-	quantity: 0,
-	unlockValue: 20
-	};
-*/
 	quantity3=quantity3+1;
 	document.getElementById("quantity3").innerHTML = quantity3;
-	window.store.state = quantity3;
-/*			var price3 = reducer(store.state,constants.'BUY_GENERATOR');
-	const action = {
-		type: constants.BUY_GENERATOR,
-		payload: {
-			name: 'Cookie Factory',
-			quantity: 1
-		}
-	};
-
-	document.getElementById("clickIncrease1").innerHTML = price3+" Cookies";
-*/
+//	window.store.state = quantity3;
 	window.incrementalGame.state.counter = counterHere;
-		//var counter3 = window.state.counter;
-//		counterHere++;
 		decrease(costCookieFactory);
 		costCookieFactory = Generator.getCost();
 		document.getElementById("clickIncrease3").innerHTML = costCookieFactory+" Cookies";
-		//quantityFinal = quantityFinal+500;
-		//document.getElementById("counter").innerHTML = quantityFinal+500;
-		//alert('Increased by 500');
-//		pubSub.publish(counterHere);//window.incrementalGame.state.counter);
-//		pubSub.subscribe();
 		return quantity3;
 }
 
@@ -160,8 +76,8 @@ function increase(increment){
 	counterHere = counterHere+increment;
 	document.getElementById("counter").innerHTML = quantityFinal;
 	window.incrementalGame.state.counter = counterHere;
+	window.store.state.counter = window.incrementalGame.state.counter;
 	pubSub.publish(window.incrementalGame.state.counter);
-//	pubSub.subscribe();
 	return quantityFinal;
 }
 function decrease(increment2){
@@ -169,8 +85,8 @@ function decrease(increment2){
 	counterHere = counterHere-increment2;
 	document.getElementById("counter").innerHTML = quantityFinal;
 	window.incrementalGame.state.counter = counterHere;
+	window.store.state.counter = window.incrementalGame.state.counter;
 	pubSub.publish(window.incrementalGame.state.counter);
-//	pubSub.subscribe();
 	return quantityFinal;
 }
 

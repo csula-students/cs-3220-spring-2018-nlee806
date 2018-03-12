@@ -36,16 +36,16 @@ export default function (store) {
 		handleStateChange (newState) {
             console.log('GeneratorComponent#stateChange', this, this.store.state);
             // remove any existing counters (if any)
-            counter.forEach(c => {
-                this.classList.remove(c);
-            });
+//          counter.forEach(c => {
+//                this.classList.remove(c);
+//            });
             if (newState.counter) {
                 // render up to date counter
                 this.classList.add(newState.counter);
             }
-			generators.forEach(c => {
-                this.classList.remove(c);
-            });
+//			generators.forEach(c => {
+//                this.classList.remove(c);
+//            });
             if (newState.generators) {
                 // render up to date generator
                 this.classList.add(newState.generators);

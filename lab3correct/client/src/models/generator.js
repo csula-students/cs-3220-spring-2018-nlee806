@@ -27,13 +27,20 @@ export default class Generator {
 	 * @return {number} the cost of buying another generator
 	 */
 	getCost () {
-		var firstCost = (baseCost)*(1+constants.growthRatio)^quantity;
-		var secondCost = firstCost/quantity;
-		if(secondCost==0){
-			return baseCost;
+		if(typeof this.quantity !== 'undefined'){
+			var firstCost = (this.baseCost)*Math.pow((1.00+(0.05)),(this.quantity));
+	//		var secondCost = firstCost/this.quantity;
+			if(this.quantity==0.00){
+				return this.baseCost;
+			}
+			else{
+				var finalCost = Number(firstCost.toFixed(2));
+				//Number(Math.round(firstCost+'e2')+'e-2');
+				return finalCost;
+			}
 		}
 		else{
-			return secondCost;
+			return this.baseCost;
 		}
 //		// TODO: implement the function according to doc above
 //		return 0;
@@ -45,7 +52,7 @@ export default class Generator {
 	 * @return {number} how much this generator generates
 	 */
 	generate () {
-		var generated = rate * quantity;
+		var generated = this.rate * this.quantity;
 		return generated;
 //		// TODO: implement based on doc above
 //		return 0;

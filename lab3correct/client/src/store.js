@@ -19,7 +19,8 @@ export default class Store {
 	 * Overwrites getter for `state` variable to be READ-ONLY state through
 	 * deepCopy method
 	 */
-	get state () {
+	get state () { 	
+//personal note: contains counter, generators, story. Use console.log(window.store.state); in console.
 		return deepCopy(this.__state);
 	}
 
