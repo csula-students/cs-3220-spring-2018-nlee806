@@ -5,20 +5,23 @@ export default function reducer (state, action) {
 		return state;
 		break;
 	case 'BUY_GENERATOR':
-		state.counter = action.payload;
-		state.generator = action.payload;
+//		state.counter = action.payload;
+		state.generators.name = action.payload.name;
+		state.generators.quantity = action.payload.quantity;
 		return state;
 		break;
 	case 'INCREMENT':
-state.data = action.payload;
+//state.data = action.payload;
 		state.counter = action.payload;
-		state.generator = action.payload;
-		state.stories = action.payload;
+//		state.generators = action;
+//		state.stories = action;
 		return state;
 		break;
 	case 'CHECK_STORY':
-		state.counter = action.payload;
-		state.generator = action.payload;
+state.data = action;
+//		state.counter = action;
+//		state.generators = action;
+		state.story = action;
 		return state;
 		break;
 	default:

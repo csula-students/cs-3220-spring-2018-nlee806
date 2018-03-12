@@ -18,7 +18,7 @@ export default class Story {
 	 */
 	isUnlockYet (value) {
 		// TODO: implement based on doc
-		if(){
+		if(value>=triggeredAt){
 			return true;
 		}
 		else{
@@ -31,6 +31,6 @@ export default class Story {
 	 */
 	unlock () {
 		// TODO: change the story state to "visible"
-		
+		state = 'visible';
 	}
 }

@@ -24,18 +24,14 @@
 	</header>
 	<div class = "storybook">
 		<nav>
-				<p>Story line...</p>
-				<p>Story line 2...</p>
-				<p>More story line to come...</p>
+				<p id = "story">Story line</p>
 		</nav>
 	</div>
 	<div class = "resourcelist">
-//	<game-generator data-id="0">
 		<h2>Cookies:</h2>
 		<h2 id = "counter">0</h2>
 		<button name="count" id = "count" type="button" value="action" onclick="increase(1)">Buy</button>
 		<p></p>
-//		</game-generator>
 	</div>
 	<div class = "boxes">
 	<div class = "box1">
@@ -48,7 +44,7 @@
 	</game-generator>
 	</div>
 	<div class = "box2">
-	<game-generator data-id="0">
+	<game-generator data-id="1">
 		<h1>Grandmom</h1>
 		<p><Generator description...describing how much it generates per minute/p>
 		<button id = "clickIncrease2" name="button2" type="button" value="100" onclick="genGrandma()">100 Cookies</button>
@@ -57,7 +53,7 @@
 	</game-generator>
 	</div>
 	<div class = "box3">
-	<game-generator data-id="0">
+	<game-generator data-id="2">
 		<h1>Cookie Factory</h1>
 		<p><Generator description...describing how much it generates per minute/p>
 		<button id = "clickIncrease3" name="button3" type="button" value="500" onclick="genCookieFactory()">500 Cookies</button>
@@ -69,7 +65,6 @@
 	<footer>
 		<h1></h1>
 	</footer>
-	
 	<component-example></component-example>
 	<script src = "dest/app.bundle.js"></script>
 </body>
