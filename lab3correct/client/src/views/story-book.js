@@ -9,7 +9,10 @@ export default function (store) {
 
 		handleStateChange (newState) {
 			// TODO: display story based on the state "resource" and "stories"
-				window.store.state
+				this.store.dispatch({
+                    type: 'CHECK_STORY',
+                });
+				document.getElementById("story").innerHTML = window.store.state.stories;
 /*			
 			console.log('WebComponent#stateChange', this, this.store.state);
             // remove any existing counters (if any)
