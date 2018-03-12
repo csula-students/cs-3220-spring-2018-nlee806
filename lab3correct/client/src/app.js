@@ -77,8 +77,24 @@ function main () {
 	const initialState = {
 		example: 'Hello custom element',
 		counter: 0,
-		generators: [],
-		story: []
+		generators: [/*
+			{
+			name: 'Grandma',
+			description: '...',
+			rate:5,
+			baseCost:10,
+			quantity:0,
+			unlockValue:10
+			}*/
+		],
+		story: [/*
+			{
+            name: 'Grandma shows up',
+            description: 'Grandma baking cookies',
+            triggeredAt: 10,
+            state: 'hidden'
+			}*/
+		]
 	};
 
 	// initialize store

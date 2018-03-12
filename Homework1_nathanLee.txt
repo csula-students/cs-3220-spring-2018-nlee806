@@ -2,10 +2,10 @@ Application URL:
 
 
 https://github.com/csula-students/cs-3220-spring-2018-nlee806/upload/master
-https://github.com/csula-students/cs-3220-spring-2018-nlee806/tree/master/lab2
+https://github.com/csula-students/cs-3220-spring-2018-nlee806/tree/master/homework1
 
 
 Github Pull Request URL: 
 
 
-https://github.com/csula-students/cs-3220-spring-2018-nlee806/pull/5
+https://github.com/csula-students/cs-3220-spring-2018-nlee806/pull/9
