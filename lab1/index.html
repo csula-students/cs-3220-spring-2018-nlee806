@@ -22,21 +22,49 @@
 		<h2>Cookies: 1337</h2>
 		<button name="action" type="button" value="action">Action</button>
 	</div>
+	<div class = "boxes">
 	<div class = "box1">
 		<h1>Cursor</h1>
 		<p><Generator description...describing how much it generates per minute/p>
-		<button name="button1" type="button" value="10">10 Cookies</button>
+		<button name="button1" type="button" value="10" onclick="increase10()">10 Cookies</button>
+		<p name = "quantity1">0</p>
+		<p name = "rate">0/60</p>
 	</div>
 	<div class = "box2">
 		<h1>Grandmom</h1>
 		<p><Generator description...describing how much it generates per minute/p>
-		<button name="button2" type="button" value="100">100 Cookies</button>
+		<button name="button2" type="button" value="100" onclick="increase100()">100 Cookies</button>
+		<p name = "quantity2">0</p>
+		<p name = "rate">0/60</p>
 	</div>
 	<div class = "box3">
 		<h1>Cookie Factory</h1>
 		<p><Generator description...describing how much it generates per minute/p>
-		<button name="button3" type="button" value="500">500 Cookies</button>
+		<button name="button3" type="button" value="500" onclick="increase500()">500 Cookies</button>
+		<p name = "quantity3">0</p>
+		<p name = "rate">0/60</p>
 	</div>
+	</div>
+	<script>
+		function increase10(){
+			var x = document.createElement("number");
+			x.setAttribute("type", "number");
+			x.setAttribute("value", "0");
+			document.body.appendChild(x);
+		}
+		function increase100(){
+			var x = document.createElement("number");
+			x.setAttribute("type", "number");
+			x.setAttribute("value", "0");
+			document.body.appendChild(x);
+		}
+		function increase500(){
+			var x = document.createElement("number");
+			x.setAttribute("type", "number");
+			x.setAttribute("value", "0");
+			document.body.appendChild(x);
+		}
+	</script>
 	
 	<footer>
 		<h1></h1>

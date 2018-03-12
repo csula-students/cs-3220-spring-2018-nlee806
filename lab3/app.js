@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 //import reducer from '../src/reducer';
 //import constants from '../src/constants';
 //<script type = "module" src = "../src/reducer"></script>
@@ -11,22 +11,14 @@ var costCursor = 10;
 var costGrandma = 100;
 var costCookieFactory = 500;
 var quantityFinal = quantity1+quantity2+quantity3;
-=======
-<<<<<<< HEAD
 import reducer from '../src/reducer';
 import constants from '../src/constants';
-=======
->>>>>>> ad7ca3bf2051efcb7f412841aa45756fa87051a0
 
 var quantity1 = 0;
 var quantity2 = 0;
 var quantity3 = 0;
-<<<<<<< HEAD
 var quantityFinal = 0;
-=======
 var quantityFinal = quantity1+quantity2+quantity3;
->>>>>>> ad7ca3bf2051efcb7f412841aa45756fa87051a0
->>>>>>> 907d88553ff1a70b554637703dcd0bb4f4f63c23
 /*
 document.querySelector('#clickIncrease1').bind("click", function(){
 	.onclick = function(){
@@ -56,7 +48,6 @@ document.querySelector('#clickIncrease3').bind("click", function(){
 	};
 }
 */
-<<<<<<< HEAD
 function genCursor(){
 //		window.incrementalGame.state.counter = counterHere;
 /*	const exCursor = {
@@ -175,44 +166,6 @@ function genCookieFactory(){
 		//alert('Increased by 500');
 //		pubSub.publish(counterHere);//window.incrementalGame.state.counter);
 //		pubSub.subscribe();
-<<<<<<< HEAD
-=======
-=======
-	quantity1=quantity1+10;
-	document.getElementById("quantity1").innerHTML = quantity1;
-	increase(10);
-	//quantityFinal = quantityFinal+10;
-	//document.getElementById("counter").innerHTML = quantityFinal+10;
-	//alert('Increased by 10');
-	pubSub.publish(window.state.counter);
-	pubSub.subscribe();
-	pubSub.publish();
-	return quantity1;
-}
-function increase100(){
-	quantity2=quantity2+100;
-		document.getElementById("quantity2").innerHTML = quantity2;
-		increase(100);
-		//quantityFinal = quantityFinal+100;
-		//document.getElementById("counter").innerHTML = quantityFinal+100;
-		//alert('Increased by 100');
-		pubSub.publish(window.state.counter);
-		pubSub.subscribe();
-		pubSub.publish();
-		return quantity2;
-}
-function increase500(){
-	quantity3=quantity3+500;
-		document.getElementById("quantity3").innerHTML = quantity3;
-		increase(500);
-		//quantityFinal = quantityFinal+500;
-		//document.getElementById("counter").innerHTML = quantityFinal+500;
-		//alert('Increased by 500');
-		pubSub.publish(window.state.counter);
-		pubSub.subscribe();
-		pubSub.publish();
->>>>>>> ad7ca3bf2051efcb7f412841aa45756fa87051a0
->>>>>>> 907d88553ff1a70b554637703dcd0bb4f4f63c23
 		return quantity3;
 }
 
@@ -220,11 +173,7 @@ function increase(increment){
 	quantityFinal = quantityFinal+increment;
 	counterHere = counterHere+increment;
 	document.getElementById("counter").innerHTML = quantityFinal;
-<<<<<<< HEAD
 	window.incrementalGame.state.counter = counterHere;
-=======
-<<<<<<< HEAD
->>>>>>> 907d88553ff1a70b554637703dcd0bb4f4f63c23
 	pubSub.publish(window.incrementalGame.state.counter);
 //	pubSub.subscribe();
 	return quantityFinal;
@@ -236,45 +185,126 @@ function decrease(increment2){
 	window.incrementalGame.state.counter = counterHere;
 	pubSub.publish(window.incrementalGame.state.counter);
 //	pubSub.subscribe();
-<<<<<<< HEAD
-=======
-=======
-	pubSub.publish(window.state.counter);
-	pubSub.subscribe()
-	pubSub.publish()
->>>>>>> ad7ca3bf2051efcb7f412841aa45756fa87051a0
->>>>>>> 907d88553ff1a70b554637703dcd0bb4f4f63c23
 	return quantityFinal;
 }
+/**
+import '@webcomponents/webcomponentsjs';
 
-//document.getElementById("clickIncrease").addEventListener("click", function(){
-//    document.getElementById("clickIncrease").innerHTML = "Hello World";
-//});
+import {loop} from './game';
+import Store from './store';
+import reducer from './reducer';
 
-// PubSub is single object for publish data to multiple subscribers
-class PubSub {
-    constructor () {
-        this.subscribers = [];
-    }
+import ButtonComponent from './views/button';
+import CounterComponent from './views/counter';
+import ExampleComponent from './views/example';
+import GeneratorComponent from './views/generator';
+import StoryBookComponent from './views/story-book';
 
-    // subscribe allows a new subscriber to listen for changes by providing
-    // callback function in the parameter
-    subscribe (fn) {
-        this.subscribers.push(fn);
-    }
+/*
+ * Data flow diagram
+ +----------------------------------------------------+
+ | +------------------+          +------------------+ |
+ | |                  |          |                  | |
+++-|       Loop       |<---------|    Generator     | |
+|| |                  |          |                  | |
+|| +------------------+          +------------------+ |
+||G          ^                                        |
+||a          +-----------------------------+          |
+||m                                        |          |
+||e                                        |          |
+||                               +------------------+ |
+||                               |                  | |
+||                               |     Stories      | |
+||                               |                  | |
+||                               +------------------+ |
+|+----------------------------------------------------+
++------------------------------------------------------------+
+|                                                            |
+|                                                            |
+|                                                            |
+|                                                            |
+|                                                            |
+|                                                            |
+|                                                            |
+|                                                            |
+|       +----------------------------------------------------+----------+
+|       | +------------------+                     +------------------+ |
+|       | |                  |        Mutates      |                  | |
+|       | |     Reducer      |-------------------->|      State       | |
+|       | |                  |                     |                  | |
+|       | +------------------+                     +------------------+ |
+|       |S          ^                                        |          |
+|       |t          |                                        |          |
+|       |o          |                                        |          |
+|       |r          | Triggers                     Notifies  |          |
+|       |e          |                                        |          |
+|       |           |                                        v          |
+|       | +------------------+                     +------------------+ |
+|       | |                  |                     |                  | |
++-------+>|      Action      |                     |    Listeners     | |
+        | |                  |                     |                  | |
+        | +------------------+                     +------------------+ |
+        +-----------^----------------------------------------+----------+
+                    |                                        |
+                    |                                        |
+                    |                                        |
+                    |                                        |
+                    | Dispatches                             |
+                    |                                        |
+                    |                                        |
+          +------------------+                               |
+          |                  |                               |
+          |      Views       |              Notifies changes |
+          |    Components    |<------------------------------+
+          |                  |
+          +------------------+
+ */
+/*main();
 
-    // one can publish any data to subscribers
-    publish (data) {
-        this.subscribers.forEach(subscriber => {
-            subscriber(data);
-        });
-    }
+// main function wraps everything at top level
+function main () {
+	// TODO: fill the blank based on the theme you have choosen
+	const initialState = {
+		example: 'Hello custom element',
+		counter: 0,
+		generators: [/*
+			{
+			name: 'Grandma',
+			description: '...',
+			rate:5,
+			baseCost:10,
+			quantity:0,
+			unlockValue:10
+			}*/
+/*		],
+		story: [*//*
+			{
+            name: 'Grandma shows up',
+            description: 'Grandma baking cookies',
+            triggeredAt: 10,
+            state: 'hidden'
+			}*/
+/*		]
+	};
+
+	// initialize store
+	const store = new Store(reducer, initialState);
+	console.log(ExampleComponent(store));
+
+	// define web components
+	window.customElements.define('component-example', ExampleComponent(store));
+	// no longer used
+	window.customElements.define('game-button', ButtonComponent(store));
+	window.customElements.define('game-counter', CounterComponent(store));
+	// lab 3
+	window.customElements.define('game-generator', GeneratorComponent(store));
+	// homework 1
+	window.customElements.define('game-story-book', StoryBookComponent(store));
+
+	// For ease of debugging purpose, we will expose the critical store under window
+	// ps: window is global
+	window.store = store;
+
+	// start game loop
+	loop(store);*/
 }
-
-const pubSub = new PubSub();
-
-pubSub.subscribe(data => {
-    console.log(data);
-});
-
-pubSub.publish('Hello world!');
