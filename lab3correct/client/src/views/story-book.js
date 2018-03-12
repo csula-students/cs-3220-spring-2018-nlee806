@@ -24,6 +24,7 @@ export default function (store) {
             if (newState.generators) {
                 // render up to date generator
                 this.classList.add(newState.generators);
+			}
 		}
 
 		connectedCallback () {
