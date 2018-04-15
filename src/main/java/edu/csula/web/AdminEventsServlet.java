@@ -26,7 +26,7 @@ public class AdminEventsServlet extends HttpServlet {
 		EventsDAO dao = new EventsDAOImpl(getServletContext());
 		Collection<Event> events = dao.getAll();
 		System.out.println(events);
-		out.println("<h1>Hello events servlet!</h1>");
+		out.println("<h1>events servlet</h1>");
 //		html +=”<tr>”
 //		for(Entry entry: entries){
 //			html += entry.getAll();
