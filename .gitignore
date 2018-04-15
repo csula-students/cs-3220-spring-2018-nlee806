@@ -17,3 +17,11 @@ gradle-app.setting
 
 src/main/webapp/js/app.bundle.js
 src/main/webapp/js/app.bundle.js.map
+<<<<<<< HEAD
+=======
+
+tags*
+
+dest/
+.idea/
+>>>>>>> Added changes to files and am very confused.
