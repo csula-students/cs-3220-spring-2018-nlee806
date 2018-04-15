@@ -1,4 +1,5 @@
 /*eslint-env node, jest */
+<<<<<<< HEAD
 /*
 import reducer from '../src/reducer';
 
@@ -19,6 +20,8 @@ it('reducer should be able to set example state from "EXAMPLE_MUTATION" action',
 
 
 /*eslint-env node, jest */
+=======
+>>>>>>> Added changes to files and am very confused.
 import reducer from '../src/reducer';
 import constants from '../src/constants';
 import * as mock from './mock';
@@ -83,4 +86,8 @@ test('should be able to mutate story state on "CHECK_STORY" action', () => {
 		story: [Object.assign({}, mock.story, {state: 'visible'})]
 	};
 	expect(reducer(initialState, action)).toEqual(expected);
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> Added changes to files and am very confused.

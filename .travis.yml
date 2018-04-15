@@ -5,3 +5,7 @@ matrix:
         - "8"
       before_script:
         - cd client
+<<<<<<< HEAD
+=======
+    - language: java
+>>>>>>> Added changes to files and am very confused.

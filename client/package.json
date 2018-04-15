@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "name": "client",
   "version": "1.0.0",
   "description": "",
+=======
+  "name": "incrementalGame-framework-client",
+  "version": "1.0.0",
+  "description": "An incremental game famework front end app",
+>>>>>>> Added changes to files and am very confused.
   "main": "src/app.js",
   "directories": {
     "test": "test"
@@ -9,7 +15,12 @@
   "scripts": {
     "pretest": "npm install",
     "test": "jest",
+<<<<<<< HEAD
     "build": "webpack"
+=======
+    "build": "webpack",
+    "watch": "webpack --watch"
+>>>>>>> Added changes to files and am very confused.
   },
   "author": "Eric Liao <rcliao01@gmail.com>",
   "license": "MIT",

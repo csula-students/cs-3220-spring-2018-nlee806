@@ -76,9 +76,15 @@ function main () {
 	// TODO: fill the blank based on the theme you have choosen
 	const initialState = {
 		example: 'Hello custom element',
+<<<<<<< HEAD
 		resource: {},
 		generators: [],
 		story: []
+=======
+		counter: 0,
+		generators: [],
+		stories: []
+>>>>>>> Added changes to files and am very confused.
 	};
 
 	// initialize store
@@ -87,9 +93,18 @@ function main () {
 
 	// define web components
 	window.customElements.define('component-example', ExampleComponent(store));
+<<<<<<< HEAD
 	window.customElements.define('game-button', ButtonComponent(store));
 	window.customElements.define('game-counter', CounterComponent(store));
 	window.customElements.define('game-generator', GeneratorComponent(store));
+=======
+	// no longer used
+	window.customElements.define('game-button', ButtonComponent(store));
+	window.customElements.define('game-counter', CounterComponent(store));
+	// lab 3
+	window.customElements.define('game-generator', GeneratorComponent(store));
+	// homework 1
+>>>>>>> Added changes to files and am very confused.
 	window.customElements.define('game-story-book', StoryBookComponent(store));
 
 	// For ease of debugging purpose, we will expose the critical store under window

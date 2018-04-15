@@ -5,7 +5,11 @@
  * In a single project build this file can be empty or even removed.
  *
  * Detailed information about configuring a multi-project build in Gradle can be found
+<<<<<<< HEAD
  * in the user guide at https://docs.gradle.org/4.0/userguide/multi_project_builds.html
+=======
+ * in the user guide at https://docs.gradle.org/4.3.1/userguide/multi_project_builds.html
+>>>>>>> Added changes to files and am very confused.
  */
 
 /*
@@ -15,4 +19,8 @@ include 'api'
 include 'services:webservice'
 */
 
+<<<<<<< HEAD
 rootProject.name = 'java-tomcat-gradle-starter'
+=======
+rootProject.name = 'cookie-clicker'
+>>>>>>> Added changes to files and am very confused.

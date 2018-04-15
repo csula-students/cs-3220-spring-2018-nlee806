@@ -3,6 +3,10 @@ export default function (store) {
 		constructor () {
 			super();
 			this.store = store;
+<<<<<<< HEAD
+=======
+			// TODO: initial DOM rendering of story itself
+>>>>>>> Added changes to files and am very confused.
 
 			this.onStateChange = this.handleStateChange.bind(this);
 		}
