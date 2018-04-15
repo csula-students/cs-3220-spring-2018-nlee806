@@ -15,31 +15,34 @@ body{
 		padding: 0;
 	}
 	.boxes{
-		position: relative;
+		//position: relative;
 		width:100%;
 	}
 	.box1 {
 		background-color: white;
 		border: 5px solid black;
 		padding: 30px;
-		position: absolute;
-		float:left;
-		width: 300px;
+		//position: absolute;
+		//float:left;
+		display: inline-block;
+		width: 280px;
 	}
 	.box2 {
 		background-color: white;
 		border: 5px solid black;
-		margin: auto;
+		//margin: auto;
+		display: inline-block;
 		padding: 30px;
-		width: 300px;
+		width: 280px;
 	}
 	.box3 {
 		background-color: white;
 		border: 5px solid black;
 		padding: 30px;
-		position:absolute;
-		right: 0px;
-		width: 300px;
+		display: inline-block;
+		//position:absolute;
+		//right: 0px;
+		width: 280px;
 	}
 	.storybook{
 		overflow:hidden;
@@ -48,23 +51,24 @@ body{
 		background-color: BLACK;
 	}
 	.action{
-		position: absolute;
+		//position: absolute;
+		display: inline-block;
 		right:0px;
 	}
 	.quantity1{
-		position: absolute;
+		//position: absolute;
 		top: 8px;
 		right: 16px;
 		font-size: 18px;
 	}
 	.quantity2{
-		position: absolute;
+		//position: absolute;
 		top: 8px;
 		right: 16px;
 		font-size: 18px;
 	}
 	.quantity3{
-		position: absolute;
+		//position: absolute;
 		top: 8px;
 		right: 16px;
 		font-size: 18px;
