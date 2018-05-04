@@ -16,10 +16,10 @@ public class AdminGeneratorsServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		String html;
-		html = "<form action="LoginServlet" method="post">";  
-		out.println(html += "Name:<input type="text" name="name"><br>"  
-			+ "Password:<input type="password" name="password"><br>"  
-			+ "<input type="submit" value="login">"
+		html = "<form action=\"LoginServlet\" method=\"post\">";  
+		out.println(html += "Name:<input type=\"text\" name=\"name\"><br>"  
+			+ "Password:<input type=\"password\" name=\"password\"><br>"  
+			+ "<input type=\"submit\" value=\"login\">"
 			+ "</form>"  
 			+ request.getRequestDispatcher("generators.html").include(request, response)
 		); 
