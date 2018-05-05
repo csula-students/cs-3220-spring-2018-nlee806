@@ -15,14 +15,15 @@ public class AdminGeneratorsServlet extends HttpServlet {
 		// TODO: render the generators page HTML
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String html;
-		html = "<form action=\"LoginServlet\" method=\"post\">";  
-		out.println(html += "Name:<input type=\"text\" name=\"name\"><br>"  
-			+ "Password:<input type=\"password\" name=\"password\"><br>"  
-			+ "<input type=\"submit\" value=\"login\">"
-			+ "</form>"  
-			+ request.getRequestDispatcher("generators.html").include(request, response)
-		); 
+		out.println("index.html");
+//		String html;
+//		html = "<form action=\"LoginServlet\" method=\"post\">";  
+//		out.println(html += "Name:<input type=\"text\" name=\"name\"><br>"  
+//			+ "Password:<input type=\"password\" name=\"password\"><br>"  
+//			+ "<input type=\"submit\" value=\"login\">"
+//			+ "</form>"  
+//			+ request.getRequestDispatcher("generators.html").include(request, response)
+//		); 
         //String name=request.getParameter("name");  
         //String password=request.getParameter("password");  
 //        if(password.equals("admin123")){  
@@ -47,25 +48,35 @@ public class AdminGeneratorsServlet extends HttpServlet {
 //		if(){
 //			response.sendRedirect("");  
 //		}
-		 try{  
+		String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        if (user != null) {
+            request.getSession().setAttribute("user", user);
+            response.sendRedirect("home");
+        }
+        else {
+            request.setAttribute("error", "Unknown user, please try again");
+            request.getRequestDispatcher("/AdminEventsServlet.jsp").forward(request, response);
+        }
+/*		 try{  
 			    response.setContentType("text/html");  
 			    PrintWriter out = response.getWriter();  
 			          
 			    String n=request.getParameter("username");  
 			    out.print("Welcome "+n);  
 			  
-			    Cookie ck=new Cookie("username",n);//creating cookie object  
-			    response.addCookie(ck);//adding cookie in the response  
-			  
+//			    Cookie ck=new Cookie("username",n);//creating cookie object  
+//			    response.addCookie(ck);//adding cookie in the response  
+//			  
 //			    //creating submit button  
 //			    out.print("<form action='servlet2'>");  
 //			    out.print("<input type='submit' value='go'>");  
 //			    out.print("</form>");  
-			    Cookie ck[]=request.getCookies();  
-			    out.print("Hello "+ck[0].getValue());  
+//			    Cookie ck[]=request.getCookies();  
+//			    out.print("Hello "+ck[0].getValue());  
 			    
 			    out.close();  
 			  
-			    }catch(Exception e){System.out.println(e);}  
+			    }catch(Exception e){System.out.println(e);}  */
 			  }  		
 }

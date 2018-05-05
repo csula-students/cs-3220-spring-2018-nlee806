@@ -18,12 +18,12 @@ public class AuthenticationServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		String html;
-		html = "<form action=\"LoginServlet\" method=\"post\">";  
+		html = "<form>";  
 		out.println(html += "Name:<input type=\"text\" name=\"name\"><br>"  
 			+ "Password:<input type=\"password\" name=\"password\"><br>"  
 			+ "<input type=\"submit\" value=\"login\">"
 			+ "</form>"  
-			+ request.getRequestDispatcher("generators.html").include(request, response)
+			+ request.getRequestDispatcher("AdminEventsServlet.jsp").include(request, response)
 		); 
 		//request.getRequestDispatcher(html).include(request, response);  
         //String name=request.getParameter("name");  
@@ -51,41 +51,43 @@ public class AuthenticationServlet extends HttpServlet {
         doGet(request, response);
         String username=request.getParameter("username");  
         String password=request.getParameter("password");  
-          
+        UsersDAOImpl us = new UsersDAOImpl();
+        us.authenticate(username, password);
+ /*       
         if(username.equals("admin") && password.equals("cs3220password")){  
             out.print("Welcome, "+username);  
             HttpSession session=request.getSession();  
             session.setAttribute("username",username);  
             session.setAttribute("password", password);
-            context.setAttribute("username",username);  
-            context.setAttribute("password", password);
-            Cookie ck = new Cookie("user",username);
-            response.addCookie(ck);
-            return true;
+//            context.setAttribute("username",username);  
+//            context.setAttribute("password", password);
+//            Cookie ck = new Cookie("user",username);
+//            response.addCookie(ck);
+//           return true;
             }  
             else{  
                 out.print("Sorry, username or password error!");
-                AuthenticationServlet tryAgain = new AuthenticationServlet();
-                tryAgain.doGet(request, response);
+                response.sendRedirect("AdminEventsServlet.jsp");
+//                AuthenticationServlet tryAgain = new AuthenticationServlet();
+//                tryAgain.doGet(request, response);
                 //request.getRequestDispatcher("login.html").include(request, response);
-                return false;
-            }  
+//                return false;
+            }  */
             out.close();  
 	}
 
     @Override
     public void doDelete( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO: handle logout
-    	response.setContentType("text/html");  
-        PrintWriter out=response.getWriter();  
-          
+        // TODO: handle logout  
         //request.getRequestDispatcher("link.html").include(request, response);
-        doGet(request, response);
+ //       doGet(request, response);
   
-        HttpSession session=request.getSession();  
-        session.invalidate();  
-        Cookie ck = new Cookie("user", "");
-        response.addCookie(ck);
+        HttpSession session=request.getSession(true);  
+        session.invalidate(); 
+        response.setContentType("text/html");  
+        PrintWriter out=response.getWriter();
+//        Cookie ck = new Cookie("user", "");
+//        response.addCookie(ck);
         out.print("Logged out.");  
         out.close();  
     }

@@ -42,14 +42,14 @@ li{
 	</ul>
 	
 	<h3>Events</h3>
-	<form action="/action_page.php">
+	<form action="/index.html">
 		Event Description<br>
-		<input type="text" name="eventdescription" value="${"Lorem..."}">
+		<input type="text" name="eventdescription" value="description">
 		<br>
 		Trigger At<br>
-		<input type="text" name="triggerat" value="${"10"}">
+		<input type="text" name="triggerat" value="unlock_at">
 		<br>
-		<input type="submit" value="${"{Add|Edit}"}">
+		<input type="submit" value="submit">
 	</form>
 </body>
 </html>

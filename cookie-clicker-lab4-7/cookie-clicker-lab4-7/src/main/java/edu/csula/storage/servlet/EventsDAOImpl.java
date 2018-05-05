@@ -54,8 +54,8 @@ public class EventsDAOImpl implements EventsDAO {
 	public Optional<Event> Event(int id) {
 		Collection<Event> list = getAll();
 		for(int a=0;a<list.size();a++){
-			if(a==context.getById(id)){
-				return list.getById(a);
+			if(a==context.getElementById(id)){
+				return list.getElementById(a);
 			}
 		}
 //		for through, get index, send back
@@ -69,9 +69,10 @@ public class EventsDAOImpl implements EventsDAO {
 	public void set(int id, Event event) {
 		Collection<Event> list = getAll();
 		for(int a=0;a<list.size();a++){
-			if(a==context.getById(id)){
+			if(a==context.getElementById(id)){
 				list.set(a, event);
-				list.setAttribute();
+				event.getServletContext().setAttribute(a, list);
+//				list.setAttribute();
 			}
 		}
 		

@@ -20,9 +20,10 @@ public class AdminEventsServlet extends HttpServlet {
 	public void doGet( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		EventsDAO dao = new EventsDAOImpl(getServletContext());
 		Collection<Event> data = dao.getAll();
+		HttpSession session = request.getSession(true);
+		response.setContentType("text/html");
     	request.setAttribute("data", data);
-		request.getRequestDispatcher(${"admin-events.jsp"})
-			.forward(request, response);
+		request.getRequestDispatcher("AdminEventsServlet.jsp").forward(request, response);
 	} 
 	//	response.setContentType("text/html");
 	//	PrintWriter out = response.getWriter();

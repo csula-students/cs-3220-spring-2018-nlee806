@@ -41,8 +41,9 @@ public class UsersDAOImpl implements UsersDAO {
         }  
         else{  
             out.print("Sorry, username or password error!");
-            AuthenticationServlet tryAgain = new AuthenticationServlet();
-            tryAgain.doGet(request, response);
+            response.sendRedirect("AdminEventsServlet.jsp");
+//            AuthenticationServlet tryAgain = new AuthenticationServlet();
+//            tryAgain.doGet(request, response);
             //request.getRequestDispatcher("login.html").include(request, response);
             return false;
         }  
@@ -62,16 +63,18 @@ public class UsersDAOImpl implements UsersDAO {
 //		} else {
 //		String username = principal.toString();
 //		}
+		else{
 		return Optional.empty();
+		}
 	}
 
 	@Override
 	public void logout() {
-		HttpSession session = request.getSession();
-		request.invalidate();
-        context.invalidate();
-        Cookie ck = new Cookie("user", "");
-        response.addCookie(ck);
+		HttpSession session = request.getSession(true);
+		session.invalidate();
+//        context.invalidate();
+ //       Cookie ck = new Cookie("user", "");
+//        response.addCookie(ck);
 		// TOOD: log user out using `invalidate`
 	}
 }
