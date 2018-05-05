@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+	import javax.servlet.http.HttpSession;
 
 @WebServlet("/admin/auth")
 public class AuthenticationServlet extends HttpServlet {
@@ -18,7 +19,7 @@ public class AuthenticationServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		String html;
-		html = "<form>";  
+		html = "<form action=\"AuthenticationServlet\" method=\"get\">";  
 		out.println(html += "Name:<input type=\"text\" name=\"name\"><br>"  
 			+ "Password:<input type=\"password\" name=\"password\"><br>"  
 			+ "<input type=\"submit\" value=\"login\">"
@@ -51,10 +52,14 @@ public class AuthenticationServlet extends HttpServlet {
         doGet(request, response);
         String username=request.getParameter("username");  
         String password=request.getParameter("password");  
-        UsersDAOImpl us = new UsersDAOImpl();
+//no way to access usersdaoimpl authenticate because no context can be passed to constructor!
+    HttpSession session=request.getSession();  
+    session.setAttribute("username",username);  
+    session.setAttribute("password", password);
+        edu.csula.storage.servlet.UsersDAOImpl us = new edu.csula.storage.servlet.UsersDAOImpl(session);
         us.authenticate(username, password);
- /*       
-        if(username.equals("admin") && password.equals("cs3220password")){  
+        
+/*        if(username.equals("admin") && password.equals("cs3220password")){  
             out.print("Welcome, "+username);  
             HttpSession session=request.getSession();  
             session.setAttribute("username",username);  
@@ -72,8 +77,8 @@ public class AuthenticationServlet extends HttpServlet {
 //                tryAgain.doGet(request, response);
                 //request.getRequestDispatcher("login.html").include(request, response);
 //                return false;
-            }  */
-            out.close();  
+            }  
+            out.close();  */
 	}
 
     @Override
@@ -82,13 +87,19 @@ public class AuthenticationServlet extends HttpServlet {
         //request.getRequestDispatcher("link.html").include(request, response);
  //       doGet(request, response);
   
-        HttpSession session=request.getSession(true);  
-        session.invalidate(); 
-        response.setContentType("text/html");  
-        PrintWriter out=response.getWriter();
+//        HttpSession session=request.getSession(true);  
+//        session.invalidate(); 
+//cannot use usersdaoimpl for logout without passing a session
+    HttpSession session=request.getSession();  
+//     session.setAttribute("username",username);  
+//     session.setAttribute("password", password);
+    	edu.csula.storage.servlet.UsersDAOImpl usd = new edu.csula.storage.servlet.UsersDAOImpl(session);
+    	usd.logout();
+//        response.setContentType("text/html");  
+//        PrintWriter out=response.getWriter();
 //        Cookie ck = new Cookie("user", "");
 //        response.addCookie(ck);
-        out.print("Logged out.");  
-        out.close();  
+//        out.print("Logged out.");  
+//        out.close();  
     }
 }

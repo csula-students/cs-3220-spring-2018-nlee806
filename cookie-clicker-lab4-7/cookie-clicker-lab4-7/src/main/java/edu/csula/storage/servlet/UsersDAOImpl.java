@@ -24,19 +24,19 @@ public class UsersDAOImpl implements UsersDAO {
 	public boolean authenticate(String username, String password) {
 		// TODO: check if username/password combination is valid and store the
 		//       username/password into the session
-		response.setContentType("text/html");  
+//		response.setContentType("text/html");  
         PrintWriter out=response.getWriter();  
         //String username=request.getParameter("username");  
         //String password=request.getParameter("password");   
         if(username.equals("admin") && password.equals("cs3220password")){  
         out.print("Welcome, "+username);  
-        HttpSession session=request.getSession();  
-        session.setAttribute("username",username);  
-        session.setAttribute("password", password);
+//        HttpSession session=request.getSession();  
+//        session.setAttribute("username",username);  
+//        session.setAttribute("password", password);
         context.setAttribute("username",username);  
         context.setAttribute("password", password);
-        Cookie ck = new Cookie("user",username);
-        response.addCookie(ck);
+//        Cookie ck = new Cookie("user",username);
+//        response.addCookie(ck);
         return true;
         }  
         else{  
@@ -54,7 +54,10 @@ public class UsersDAOImpl implements UsersDAO {
 	public Optional<User> getAuthenticatedUser() {
 		// TODO: return the authenticated user if there is any
 		if((context.username != null)&&(context.password != null)){
-			return context;
+			return Optional.ofNullable(context.username);
+//			Optional<User> fill = Optional.empty();//of();
+//			return fill.filter(<? super T> ((context.username != null)&&(context.password != null)));
+//			return context;
 		}
 //		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 //

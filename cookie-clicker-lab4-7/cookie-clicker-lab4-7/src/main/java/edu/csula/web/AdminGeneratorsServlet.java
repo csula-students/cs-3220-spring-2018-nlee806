@@ -50,8 +50,8 @@ public class AdminGeneratorsServlet extends HttpServlet {
 //		}
 		String username = request.getParameter("username");
         String password = request.getParameter("password");
-        if (user != null) {
-            request.getSession().setAttribute("user", user);
+        if (username != null) {
+            request.getSession().setAttribute("username", username);
             response.sendRedirect("home");
         }
         else {

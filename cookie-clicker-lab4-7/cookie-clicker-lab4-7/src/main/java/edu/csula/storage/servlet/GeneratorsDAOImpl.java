@@ -54,8 +54,8 @@ public class GeneratorsDAOImpl implements GeneratorsDAO {
 		// TODO: get a certain generator from context
 		Collection<Event> list = getAll();
 		for(int a=0;a<list.size();a++){
-			if(a==context.getElementById(id)){
-				return list.getElementById(a);
+			if(a==context.getAttribute(id)){
+				return list.getAttribute(a);
 			}
 		}
 //		for through, get index, send back
@@ -65,11 +65,11 @@ public class GeneratorsDAOImpl implements GeneratorsDAO {
 	@Override
 	public void set(int id, Generator generator) {
 		// TODO: change a certain generator from context
-		Collection<Event> list = getAll();
+		Collection<Generator> list = getAll();
 		for(int a=0;a<list.size();a++){
-			if(a==context.getElementById(id)){
+			if(a==context.getAttribute(id)){
 //				list.set(a, event);
-				event.getServletContext().setAttribute(a, generator);
+				list.getServletContext().setAttribute(a, generator);
 //				list.setAttribute();
 			}
 		}
@@ -78,6 +78,6 @@ public class GeneratorsDAOImpl implements GeneratorsDAO {
 	@Override
 	public void add(Generator generator) {
 		// TODO: add a new generator to the context
-		context.add(generator);
+		context.addAttribute(CONTEXT_NAME,generator);
 	}
 }
