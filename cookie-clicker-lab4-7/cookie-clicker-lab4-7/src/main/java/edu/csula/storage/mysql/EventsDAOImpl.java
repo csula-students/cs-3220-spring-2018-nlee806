@@ -47,7 +47,6 @@ public class EventsDAOImpl implements EventsDAO {
 		return new ArrayList<Event>();
 	}
 	finally{
-		
 	}
 	return lall;
 	}
@@ -74,7 +73,6 @@ public class EventsDAOImpl implements EventsDAO {
 		return Optional.empty();
 		}
 	finally{
-		
 	}
 	return Optional.of(es);
 	}
@@ -103,7 +101,6 @@ public class EventsDAOImpl implements EventsDAO {
 		e.printStackTrace();
 	}
 	finally{
-		
 	}
 	}
 
@@ -122,7 +119,6 @@ public class EventsDAOImpl implements EventsDAO {
 		e.printStackTrace();
 	}
 	finally{
-		
 	}
 	}
 
@@ -138,7 +134,6 @@ public class EventsDAOImpl implements EventsDAO {
 		e.printStackTrace();
 	}
 	finally{
-		
 	}
 	}
 }
