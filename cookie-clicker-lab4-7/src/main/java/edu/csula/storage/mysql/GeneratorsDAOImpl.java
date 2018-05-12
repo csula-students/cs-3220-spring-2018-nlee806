@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import java.sql.*;
+
 import edu.csula.storage.GeneratorsDAO;
 import edu.csula.storage.Database;
 import edu.csula.models.Generator;
