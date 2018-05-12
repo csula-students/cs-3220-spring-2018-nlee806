@@ -49,7 +49,6 @@ public class GeneratorsDAOImpl implements GeneratorsDAO {
 			return new ArrayList<Generator>();
 		}
 		finally{
-			
 		}
 		return lall;
 	}
@@ -78,7 +77,6 @@ public class GeneratorsDAOImpl implements GeneratorsDAO {
 			return Optional.empty();
 			}
 		finally{
-			
 		}
 		return Optional.of(es);
 	}
@@ -109,7 +107,6 @@ public class GeneratorsDAOImpl implements GeneratorsDAO {
 				e.printStackTrace();
 			}
 			finally{
-				
 			}
 	}
 
@@ -130,7 +127,6 @@ public class GeneratorsDAOImpl implements GeneratorsDAO {
 				e.printStackTrace();
 			}
 			finally{
-				
 			}
 	}
 
@@ -146,7 +142,6 @@ public class GeneratorsDAOImpl implements GeneratorsDAO {
 				e.printStackTrace();
 			}
 			finally{
-				
 			}
 	}
 }
