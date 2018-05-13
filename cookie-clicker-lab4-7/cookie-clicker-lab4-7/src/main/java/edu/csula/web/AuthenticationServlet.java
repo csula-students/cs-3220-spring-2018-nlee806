@@ -58,7 +58,6 @@ public class AuthenticationServlet extends HttpServlet {
     session.setAttribute("password", password);
         edu.csula.storage.servlet.UsersDAOImpl us = new edu.csula.storage.servlet.UsersDAOImpl(session);
         us.authenticate(username, password);
-        
 /*        if(username.equals("admin") && password.equals("cs3220password")){  
             out.print("Welcome, "+username);  
             HttpSession session=request.getSession();  
