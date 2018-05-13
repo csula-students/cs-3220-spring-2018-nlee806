@@ -25,6 +25,7 @@ public class AdminEventsServlet extends HttpServlet {
     	request.setAttribute("data", data);
 		request.getRequestDispatcher("AdminEventsServlet.jsp").forward(request, response);
 	} 
+	
 	//	response.setContentType("text/html");
 	//	PrintWriter out = response.getWriter();
 		// TODO: render the events page HTML
