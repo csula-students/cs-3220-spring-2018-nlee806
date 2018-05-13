@@ -1,7 +1,6 @@
 //import reducer from '../src/reducer';
 //import constants from '../src/constants';
 //<script type = "module" src = "../src/reducer"></script>
-
 var quantity1 = 0;
 var quantity2 = 0;
 var quantity3 = 0;
