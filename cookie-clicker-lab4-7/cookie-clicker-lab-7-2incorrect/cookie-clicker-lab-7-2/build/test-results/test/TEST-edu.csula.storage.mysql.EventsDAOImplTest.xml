@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.csula.storage.mysql.EventsDAOImplTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-05-07T10:13:53" hostname="PC" time="4.701">
+  <properties/>
+  <testcase name="getAll" classname="edu.csula.storage.mysql.EventsDAOImplTest" time="4.266"/>
+  <testcase name="getById" classname="edu.csula.storage.mysql.EventsDAOImplTest" time="0.389"/>
+  <testcase name="add" classname="edu.csula.storage.mysql.EventsDAOImplTest" time="0.04"/>
+  <testcase name="set" classname="edu.csula.storage.mysql.EventsDAOImplTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
