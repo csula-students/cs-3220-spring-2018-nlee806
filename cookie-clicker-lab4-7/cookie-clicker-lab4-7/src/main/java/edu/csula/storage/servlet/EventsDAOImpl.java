@@ -37,7 +37,6 @@ public class EventsDAOImpl implements EventsDAO {
 	public EventsDAOImpl(ServletContext context) {
 		this.context = context;
 	}
-
 	@Override
 	public List<Event> getAll() {
 		// TODO: read a list of events from context
